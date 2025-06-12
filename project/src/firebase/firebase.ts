@@ -1,17 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from 'firebase/auth';
-/*
-const firebaseConfig = {
-  apiKey: "AIzaSyCBoad55JOmwgjRcwVjR3RK_97USqkatrQ",
-  authDomain: "spheresito.firebaseapp.com",
-  projectId: "spheresito",
-  storageBucket: "spheresito.firebasestorage.app",
-  messagingSenderId: "900245824686",
-  appId: "1:900245824686:web:613690577a9b376013b93f",
-  measurementId: "G-CQST8SDRKH"
-};
-*/
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
