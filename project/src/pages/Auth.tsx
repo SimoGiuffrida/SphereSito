@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom'; // <--- IMPORTA useNavigate QUI
 
 function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -9,6 +10,7 @@ function Auth() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const { login, register } = useAuth();
+  const navigate = useNavigate(); // <--- INIZIALIZZA useNavigate QUI
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +27,13 @@ function Auth() {
       } else {
         await register(email, password);
       }
+
+      // NAVIGA ALLA HOME PAGE DOPO UN LOGIN/REGISTRAZIONE RIUSCITO
+      navigate('/'); 
+
     } catch (err) {
+      // Puoi aggiungere una logica più specifica per gli errori qui
+      // ad esempio, in base al codice di errore di Firebase
       setError('Si è verificato un errore. Riprova.');
       console.error(err);
     }
