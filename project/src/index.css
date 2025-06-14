@@ -58,3 +58,83 @@ body {
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600;
 }
+/* Assicurati che queste classi siano definite nel tuo CSS */
+
+.dropdown-item {
+  display: block; /* Per farli occupare l'intera larghezza */
+  padding: 0.5rem 1rem; /* Padding interno */
+  font-size: 0.875rem; /* text-sm */
+  color: #374151; /* text-gray-700 */
+  transition: background-color 150ms ease-in-out; /* Transizione hover */
+  white-space: nowrap; /* Previene il wrap del testo */
+}
+
+.dropdown-item:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+/* Per i pulsanti di logout nei dropdown, aggiungiamo anche un flex per icona */
+.dropdown-item.w-full.text-left.flex.items-center.gap-2 {
+    /* Le classi Tailwind già presenti dovrebbero bastare, ma puoi aggiustare qui se vuoi stili specifici */
+}
+
+/* Stili per il menu mobile, simili al desktop ma con aggiustamenti */
+.nav-link-mobile {
+  display: block;
+  width: 100%; /* Riempi l'intera larghezza */
+  padding: 0.75rem 0; /* Padding verticale maggiore */
+  text-align: center;
+  font-weight: 500; /* font-medium */
+  color: #4b5563; /* text-gray-700 */
+  transition: color 150ms ease-in-out;
+}
+
+.nav-link-mobile:hover {
+  color: #1f2937; /* hover:text-gray-800 */
+}
+
+.dropdown-item-mobile {
+  display: block;
+  width: 100%; /* Occupa tutta la larghezza all'interno del sottomenu mobile */
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  text-align: center; /* Centra il testo */
+  transition: background-color 150ms ease-in-out;
+  white-space: nowrap;
+}
+
+.dropdown-item-mobile:hover {
+  background-color: #f3f4f6;
+}
+
+/* Animazione per l'apertura dei dropdown (opzionale, ma carina) */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.2s ease-out forwards;
+}
+
+/* Per il menu mobile, usa un'animazione leggermente diversa se necessario */
+@keyframes fade-in-down-mobile {
+  from {
+    opacity: 0;
+    transform: translateY(-5px); /* Meno movimento */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-down-mobile {
+    animation: fade-in-down-mobile 0.2s ease-out forwards;
+}
